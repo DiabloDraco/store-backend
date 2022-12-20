@@ -33,10 +33,10 @@ let productControllers = {
 
         let querryResult = products.filter((product) => {
 
-            let subcategory = subCategoryId ? product.sub_category_id == subCategoryId : true
-            let productModel = model ? product.model == model : true
+            let subcategory = subCategoryId ? product.sub_category_id == subCategoryId : false
+            let productModel = model ? product.model == model : false
 
-            return subcategory && productModel
+            return subcategory || productModel
         })
 
         if (querryResult.length) {
